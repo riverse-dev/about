@@ -1,0 +1,124 @@
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --card: #f3f3f3;
+    --border: #ddd;
+    --accent: #007bff;
+}
+
+:root.dark {
+    --bg: #121212;
+    --text: #eaeaea;
+    --card: #1e1e1e;
+    --border: #333;
+    --accent: #4dabf7;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.toggle-btn {
+    margin-top: 15px;
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+}
+
+main {
+    flex: 1;
+}
+
+.apps {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
+}
+
+.app-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+}
+
+.app-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.app-card h3 {
+    margin: 8px 0 4px;
+    font-size: 1.08rem;
+}
+
+.app-card p {
+    font-size: 0.88rem;
+    opacity: 0.8;
+    margin: 0 0 10px;
+    line-height: 1.25rem;
+}
+
+.play-btn {
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.play-btn:hover {
+    opacity: 0.9;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 25px;
+    opacity: 0.7;
+}
