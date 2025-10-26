@@ -14,6 +14,10 @@
     --accent: #4dabf7;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     height: 100%;
@@ -26,6 +30,7 @@ body {
     font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    transition: background 0.25s, color 0.25s;
 }
 
 header {
@@ -44,6 +49,7 @@ header {
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text);
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 
 main {
@@ -64,10 +70,15 @@ main {
     justify-items: center;
 }
 
-.app-card {
+.app-card,
+.step-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
+    transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.app-card {
     width: 100%;
     max-width: 220px;
     aspect-ratio: 1 / 1;
@@ -77,7 +88,6 @@ main {
     justify-content: space-between;
     padding: 15px;
     text-align: center;
-    transition: 0.2s;
 }
 
 .app-card:hover {
@@ -103,17 +113,20 @@ main {
     line-height: 1.25rem;
 }
 
-.play-btn {
+.play-btn,
+.back-btn {
     background: var(--accent);
     color: #fff;
-    padding: 8px 10px;
+    padding: 10px 14px;
     border-radius: 6px;
     text-decoration: none;
     font-size: 0.85rem;
-    transition: 0.2s;
+    display: inline-block;
+    transition: opacity 0.2s;
 }
 
-.play-btn:hover {
+.play-btn:hover,
+.back-btn:hover {
     opacity: 0.9;
 }
 
@@ -122,5 +135,17 @@ footer {
     text-align: center;
     padding: 25px;
     opacity: 0.7;
+}
 
+.step-card {
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.step-img {
+    width: 100%;
+    margin-top: 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
 }

@@ -10,12 +10,26 @@ fetch("apps.json")
         data.forEach(app => {
             const card = document.createElement("div");
             card.className = "app-card";
+
+            const buttonLabel = app.is_release
+                ? "Lihat di Google Play"
+                : "Daftar Menjadi Penguji";
+
+            const buttonLink = app.is_release
+                ? app.link
+                : `how_to_join.html?app=${app.app_id}`;
+
+            const buttonTarget = app.is_release ? "_blank" : "_self";
+
             card.innerHTML = `
-        <img src="${app.icon}" alt="${app.name}">
-        <h3>${app.name}</h3>
-        <p>${app.description || ""}</p>
-        <a class="play-btn" href="${app.link}" target="_blank">Lihat di Google Play</a>
-      `;
+                <img src="${app.icon}" alt="${app.name}">
+                <h3>${app.name}</h3>
+                <p>${app.description || ""}</p>
+                <a class="play-btn" href="${buttonLink}" target="${buttonTarget}">
+                    ${buttonLabel}
+                </a>
+            `;
+
             appGrid.appendChild(card);
         });
     });
@@ -28,10 +42,8 @@ function applyTheme(theme) {
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
     applyTheme(savedTheme);
-} else {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        applyTheme("dark");
-    }
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    applyTheme("dark");
 }
 
 themeToggle.addEventListener("click", () => {

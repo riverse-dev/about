@@ -1,8 +1,18 @@
 [
     {
+        "app_id": "uangku",
         "name": "Uangku",
         "link": "https://play.google.com/store/apps/details?id=id.riverse.uangku",
-        "icon": "https://play-lh.googleusercontent.com/pApqK5jgL79SSxNpmWfBFpWUUuthJokQ_W_4JI1URmgmQJa1CAKiBUaHgEM1pT_aB55HVryoU_RcGk4WF5eLWy8=w480-h960-rw",
-        "description": "Aplikasi pencatatan pemasukan dan pengeluaran, simple dan efisien."
+        "icon": "assets/images/appicon-uangku.png",
+        "description": "Aplikasi pencatatan pemasukan dan pengeluaran, simple dan efisien.",
+        "is_release": true
+    },
+    {
+        "app_id": "warungku",
+        "name": "Warungku",
+        "link": "https://play.google.com/store/apps/details?id=id.riverse.uangku",
+        "icon": "assets/images/appicon-warungku.png",
+        "description": "Aplikasi pencatatan penjualan toko, simple, efisien dan terstruktur.",
+        "is_release": true
     }
 ]

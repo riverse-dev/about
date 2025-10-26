@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cara Menjadi Penguji Aplikasi</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Cara Menjadi Penguji Aplikasi</h1>
+        <p>
+            Ikuti langkah-langkah di bawah ini untuk menjadi penguji aplikasi dan
+            mendapatkan versi terbaru sebelum dirilis ke publik.
+        </p>
+        <button id="themeToggle" class="toggle-btn">🌙 / ☀️</button>
+    </header>
+
+    <section class="apps" style="max-width: 780px; margin: auto; text-align:left;">
+
+        <a class="back-btn" href="index.html" style="margin-bottom:18px; display:inline-block;">
+            ⬅️ Kembali ke Beranda
+        </a>
+
+        <div class="step-card">
+            <h2>1. Gabung ke Google Groups</h2>
+            <p>
+                Klik tombol di bawah ini untuk bergabung ke Google Groups penguji aplikasi.
+                Pastikan kamu login menggunakan akun Google yang ingin dipakai di Google Play Store.
+            </p>
+            <a class="play-btn" href="https://groups.google.com/u/3/g/tester-riverse" target="_blank">Join Now</a>
+            <img src="assets/images/tutor-1.png" alt="Step 1" class="step-img" />
+        </div>
+
+        <div class="step-card">
+            <h2>2. Pastikan Akun yang Sama Digunakan di Google Play</h2>
+            <p>
+                Buka Google Play Store di perangkatmu dan pastikan akun yang digunakan
+                sama dengan akun yang sudah kamu daftarkan di Google Groups.
+            </p>
+        </div>
+
+        <div id="dynamicStep"></div>
+
+        <div class="step-card">
+            <h2>4. Instal Aplikasi Versi Penguji</h2>
+            <p>
+                Klik tombol Install atau Update untuk memasang versi uji aplikasi dari Google Play.
+                Selamat, kamu sekarang menjadi penguji!
+            </p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> Riverse Dev</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const appId = params.get("app");
+
+        fetch("apps.json")
+            .then(res => res.json())
+            .then(data => {
+                const app = data.find(a => a.app_id === appId);
+                if (!app) return;
+
+                const step3 = document.getElementById("dynamicStep");
+                step3.innerHTML = `
+                    <div class="step-card">
+                        <h2>3. Klik Aplikasi ${app.name}</h2>
+                        <p>
+                            Klik tombol di bawah untuk menuju halaman aplikasi di Google Play,
+                            lalu lanjutkan proses untuk menginstal versi penguji.
+                        </p>
+                        <a class="play-btn" href="${app.link}" target="_blank">
+                            Buka Halaman ${app.name} di Google Play
+                        </a>
+                    </div>
+                `;
+            });
+    </script>
+
+</body>
+
+</html>
