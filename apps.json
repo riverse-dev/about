@@ -10,9 +10,9 @@
     {
         "app_id": "warungku",
         "name": "Warungku",
-        "link": "https://play.google.com/store/apps/details?id=id.riverse.uangku",
+        "link": "https://play.google.com/store/apps/details?id=id.riverse.warungku",
         "icon": "assets/images/appicon-warungku.png",
         "description": "Aplikasi pencatatan penjualan toko, simple, efisien dan terstruktur.",
-        "is_release": true
+        "is_release": false
     }
 ]

@@ -52,22 +52,17 @@ header {
     transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 
-main {
-    flex: 1;
-}
-
 .apps {
     padding: 20px;
     max-width: 900px;
     margin: auto;
-    text-align: center;
 }
 
 .grid {
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 .app-card,
@@ -79,15 +74,13 @@ main {
 }
 
 .app-card {
-    width: 100%;
-    max-width: 220px;
     aspect-ratio: 1 / 1;
+    padding: 15px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
-    text-align: center;
 }
 
 .app-card:hover {
